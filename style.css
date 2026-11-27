@@ -1,0 +1,412 @@
+:root {
+    --fondo: #181929;
+    --fondo-claro: #1e2140;
+    --texto: #f2f3fa;
+    --texto-suave: #b9bdd6;
+    --acento: #912105;
+    --acento-oscuro: #14162b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Fredoka", system-ui, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin-inline: auto;
+}
+
+.barra-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 4%;
+    background: var(--fondo-claro);
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--acento);
+}
+
+.navbar ul {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar a {
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a:focus-visible {
+    border-bottom-color: var(--acento);
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-boton {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icono {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding-block: 70px;
+}
+
+.header-txt h1 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.header-txt p {
+    color: var(--texto-suave);
+    max-width: 48ch;
+    margin-bottom: 28px;
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 999px;
+    background: var(--acento);
+    color: var(--acento-oscuro);
+    font-weight: 700;
+    transition: transform 0.15s ease;
+}
+
+.btn-1:hover,
+.btn-1:focus-visible {
+    transform: translateY(-2px);
+}
+
+.header-img img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.juegos {
+    display: grid;
+    gap: 56px;
+    padding-block: 60px;
+}
+
+.juego {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    gap: 36px;
+}
+
+/* El segundo juego invierte el orden para dar ritmo */
+.juego:nth-child(even) img {
+    order: 2;
+}
+
+.juego img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.juego-info h2 {
+    font-size: 1.9rem;
+    margin-bottom: 4px;
+}
+
+.genero {
+    color: var(--acento);
+    margin-bottom: 14px;
+}
+
+.juego-info p:not(.genero) {
+    color: var(--texto-suave);
+    max-width: 62ch;
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.btn-2 {
+    display: inline-block;
+    padding: 10px 26px;
+    border-radius: 999px;
+    border: 2px solid var(--acento);
+    color: var(--acento);
+    font-weight: 700;
+    transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.btn-2:hover,
+.btn-2:focus-visible {
+    background: var(--acento);
+    color: var(--acento-oscuro);
+    transform: translateY(-2px);
+}
+
+.footer {
+    padding: 28px 4%;
+    text-align: center;
+    background: var(--fondo-claro);
+    color: var(--texto-suave);
+}
+
+@media (max-width: 800px) {
+    .menu-boton {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--fondo-claro);
+        display: none;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 4% 18px;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    #menu-toggle:checked ~ .navbar {
+        display: block;
+    }
+
+    .header-content,
+    .juego {
+        grid-template-columns: 1fr;
+    }
+
+    .juego:nth-child(even) img {
+        order: 0;
+    }
+}
+
+.barra-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 4%;
+    background: var(--fondo-claro);
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--acento);
+}
+
+.navbar ul {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar a {
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a:focus-visible {
+    border-bottom-color: var(--acento);
+}
+
+/* El checkbox se oculta y el botón solo aparece en celular */
+#menu-toggle {
+    display: none;
+}
+
+.menu-boton {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icono {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding-block: 70px;
+}
+
+.header-txt h1 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.header-txt p {
+    color: var(--texto-suave);
+    max-width: 48ch;
+    margin-bottom: 28px;
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 999px;
+    background: var(--acento);
+    color: var(--acento-oscuro);
+    font-weight: 700;
+    transition: transform 0.15s ease;
+}
+
+.btn-1:hover,
+.btn-1:focus-visible {
+    transform: translateY(-2px);
+}
+
+.header-img img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.juegos {
+    display: grid;
+    gap: 56px;
+    padding-block: 60px;
+}
+
+.juego {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    gap: 36px;
+}
+
+.juego:nth-child(even) img {
+    order: 2;
+}
+
+.juego img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.juego-info h2 {
+    font-size: 1.9rem;
+    margin-bottom: 4px;
+}
+
+.genero {
+    color: var(--acento);
+    margin-bottom: 14px;
+}
+
+.juego-info p:last-child {
+    color: var(--texto-suave);
+    max-width: 62ch;
+}
+
+.footer {
+    padding: 28px 4%;
+    text-align: center;
+    background: var(--fondo-claro);
+    color: var(--texto-suave);
+}
+
+@media (max-width: 800px) {
+    .menu-boton {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--fondo-claro);
+        display: none;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 4% 18px;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    #menu-toggle:checked ~ .navbar {
+        display: block;
+    }
+
+    .header-content,
+    .juego {
+        grid-template-columns: 1fr;
+    }
+
+    .juego:nth-child(even) img {
+        order: 0;
+    }
+}
